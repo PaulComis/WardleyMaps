@@ -15,10 +15,12 @@ They are either
 
 ## Tools
 
+###Online Wardley Maps
 The browser version of [OnlineWardley Maps is here](https://onlinewardleymaps.com/)
 
 and there is a [VSCode plugin available on GitHub](https://marketplace.visualstudio.com/items?itemName=damonsk.vscode-wardley-maps) :
 
+###DrawIO
 The [browser version of DrawIO is here](https://app.diagrams.net/)
 
 Or, I prefer the [desktop version](https://github.com/jgraph/drawio-desktop)
