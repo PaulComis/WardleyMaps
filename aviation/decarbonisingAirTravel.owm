@@ -1,0 +1,95 @@
+title Science Led Innovation In Sustainable Power
+
+anchor decarbonise air transport [0.95, 0.44]
+
+component Long_haul [0.86, 0.15]
+component Short_haul [0.86, 0.30]
+component Regional [0.86, 0.44]
+component Sub-Regional [0.86, 0.55]
+component UAM_GA_LightVerticalLift [0.86, 0.75] label [7, -27]
+
+component Gas Turbine [0.69, 0.46]
+component Hybrid Electric [0.73, 0.27]
+component Electric Motor [0.66, 0.33]
+
+component SAFs [0.60, 0.37]
+component Hydrogen Combustion [0.58, 0.31] label [-39, 23]
+component Jet Fuel [0.61, 0.66]
+
+component PowerElectronics-Cooling [0.50, 0.24] label [-130, -7]
+
+component CarbonCapture [0.36, 0.19] label [-109, 4]
+component FuelCells [0.43, 0.31] label [13, 3]
+component AviationBatteries [0.46, 0.32] label [49, -11]
+
+component HydrolysisAtScale [0.39, 0.27] label [46, -4]
+component ZeroCarbonElectricity [0.26, 0.52] label [63, -7]
+component Polymer Electrolye Membranes [0.24, 0.20] label [5, -10]
+component Energy Storage For SelfDespatching [0.20, 0.42] label [5, -10]
+component Nuclear Generation [0.14, 0.32] label [5, -10]
+component Small Modular Reactors [0.14, 0.58]
+
+component Reneable Electricity Generation [0.07, 0.47]
+component Oil, Coal, Gas [0.05, 0.74] label [5, -10]
+
+note Aviation segments ordered by which I think likely to decarbonise first [0.84, 0.61]
+note this needs to go [0.61, 0.68]
+note deliberately not includings SAFs from crops, oil waste [0.58, 0.35]
+note Focus is on decarbonising fuel use. Could also include [0.77, 0.64]
+note Design and Manufacture [0.69, 0.66]
+note Improvements in aerodynamics [0.68, 0.66]
+note Improvements in ground operations [0.70, 0.66]
+note Efficient use of airspace (Optimised Trajectory) [0.71, 0.66]
+note Certification (as a source of interia) [0.73, 0.66]
+note Logistics (fuel transportation, storage) [0.75, 0.66]
+
+decarbonise air transport->Long_haul
+decarbonise air transport->Short_haul
+decarbonise air transport->Regional
+decarbonise air transport->Sub-Regional
+decarbonise air transport->UAM_GA_LightVerticalLift
+
+Long_haul->Gas Turbine
+Short_haul->Gas Turbine
+Regional->Gas Turbine
+Sub-Regional->Gas Turbine
+
+UAM_GA_LightVerticalLift->Electric Motor
+Sub-Regional->Electric Motor
+Regional->Electric Motor
+Short_haul->Hybrid Electric
+Regional->Hybrid Electric
+
+Hybrid Electric->Gas Turbine
+Hybrid Electric->Electric Motor
+
+Gas Turbine->SAFs
+Gas Turbine->Hydrogen Combustion
+Gas Turbine->Jet Fuel
+Jet Fuel->Oil, Coal, Gas
+
+FuelCells->HydrolysisAtScale
+Hydrogen Combustion->HydrolysisAtScale
+AviationBatteries->ZeroCarbonElectricity
+fuelCells->Polymer Electrolye Membranes
+HydrolysisAtScale->Polymer Electrolye Membranes
+
+SAFs->CarbonCapture
+
+Electric Motor->PowerElectronics-Cooling
+PowerElectronics-Cooling->FuelCells
+PowerElectronics-Cooling->AviationBatteries
+
+HydrolysisAtScale->ZeroCarbonElectricity
+FuelCells->ZeroCarbonElectricity
+CarbonCapture->ZeroCarbonElectricity
+
+ZeroCarbonElectricity->Small Modular Reactors
+ZeroCarbonElectricity->Energy Storage For SelfDespatching
+Energy Storage For SelfDespatching->Reneable Electricity Generation
+
+Nuclear Generation+>Small Modular Reactors
+
+
+style wardley
+
